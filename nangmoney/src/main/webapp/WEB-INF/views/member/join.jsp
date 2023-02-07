@@ -8,6 +8,7 @@
 	</div>
 	
 <form method="POST" name=joinForm id="joinForm">
+	<input type="hidden" value="0" name="userGroup">
 	<table id="jointalbe">
 		<caption>(*)표시는 <strong>필수입력</strong>사항입니다.</caption>
 		<tr>
@@ -37,7 +38,6 @@
 				<input 	type="password" name="pwConfirm" id="pwConfirm" 
 						placeholder="비밀번호 입력"> 
 						<span id ="confirmMsg"></span>
-				<!--onkeyup : value가 입력된 후 이벤트가 실행된다 -->
 			</div>
 			</td>
 		</tr>
