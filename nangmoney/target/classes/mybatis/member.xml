@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.itbank.repository.MemberDAO">
+
+<!-- 	<select id="getList" resultType="member"> -->
+<!-- 		select * -->
+<!-- 		from member -->
+<!-- 		order by idx -->
+<!-- 	</select> -->
+	
+	<insert id="addMember" parameterType="member">
+		INSERT INTO member (userEmail, userPw, userName, nickName, age)
+		values(#{userEmail}, #{userPw}, #{userName}, #{nickName}, #{age})
+	
+	</insert>
+	
+	<select id="dupCheck" parameterType="String" resultType="int">
+		SELECT COUNT(userEmail) FROM member WHERE userEmail= #{userEmail}
+	</select>
+	
+	<select id="nicknameDupResult" parameterType="String" resultType="int">
+		SELECT COUNT(nickName) FROM member WHERE nickName= #{nickName}
+	</select>
+	
+<!-- 	<select id="idChecks" parameterType="String" resultType="int"> -->
+<!-- 		SELECT COUNT(userid) FROM member5 WHERE userid= #{userid} -->
+<!-- 	</select> -->
+	
+<!-- 	<select id="selectUseridCount" parameterType="String" resultType="int"> -->
+<!-- 		select count(*) from member5 where userid=#{inputId} -->
+<!-- 	</select> -->
+	
+<!-- 	<select id="login" resultType="member5" parameterType="member5"> -->
+<!-- 		select * -->
+<!-- 		from member5 -->
+<!-- 		where userid = #{userid} -->
+<!-- 		and	userpw = #{userpw} -->
+<!-- 	</select> -->
+	
+<!-- 	<select id="selectOne" resultType="member5" parameterType="int"> -->
+<!-- 		select * -->
+<!-- 		from member5 -->
+<!-- 		where idx=#{idx} -->
+<!-- 	</select> -->
+	
+<!-- 	<update id="modify" parameterType="member5"> -->
+<!-- 		update member5 set -->
+<!-- 			userpw=#{userpw}, -->
+<!-- 			username=#{username}, -->
+<!-- 			birth=#{birth}, -->
+<!-- 			gender=#{gender} -->
+<!-- 		where idx=#{idx} -->
+<!-- 	</update> -->
+	
+<!-- 	<delete id="delete" parameterType="int"> -->
+<!-- 		delete from member5 where idx=#{idx} -->
+<!-- 	</delete> -->
+</mapper>
